@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Warren Strange
+	email = warren.strange@gmail.com
+[core]
+	excludesfile = /Users/warren.strange/.gitignore
+	quotepath = false
+	autocrlf = input
+	filemode = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+        st = status
+        l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all
+        checkout-pr = "!f() { git fetch -fu ${2:-upstream} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; } ; f"
+
+[pull]
+	 rebase = true
+
+[merge]
+	conflictstyle = diff3
+
+[commit]
+	template = /Users/warren.strange/.stCommitMsg
