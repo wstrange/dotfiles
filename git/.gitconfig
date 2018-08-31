@@ -8,6 +8,7 @@
 	quotepath = false
 	autocrlf = input
 	filemode = false
+	editor = vi
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -26,4 +27,3 @@
 	conflictstyle = diff3
 
 [commit]
-	template = /Users/warren.strange/.stCommitMsg

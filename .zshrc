@@ -104,3 +104,7 @@ source $ZSH/oh-my-zsh.sh
 alias k=kubectl
 alias de='eval $(minikube docker-env)'
 alias gc='gcloud alpha cloud-shell ssh'
+
+
+stty intr ^x
+
