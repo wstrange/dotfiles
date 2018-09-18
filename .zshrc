@@ -106,5 +106,5 @@ alias de='eval $(minikube docker-env)'
 alias gc='gcloud alpha cloud-shell ssh'
 
 
-stty intr ^x
+
 

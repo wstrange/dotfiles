@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # All the stuff I needed to install on Linux
 
-apt-get install golang
+apt-get install golang openjdk-11-jdk
 
 
 # Go dep
