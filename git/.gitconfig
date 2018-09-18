@@ -4,7 +4,7 @@
 	name = Warren Strange
 	email = warren.strange@gmail.com
 [core]
-	excludesfile = /Users/warren.strange/.gitignore
+	excludesfile = ~/.gitignore
 	quotepath = false
 	autocrlf = input
 	filemode = false
