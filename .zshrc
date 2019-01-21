@@ -106,5 +106,12 @@ alias de='eval $(minikube docker-env)'
 alias gc='gcloud alpha cloud-shell ssh'
 
 
+# Mac stuff
+export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
+
+export JAVA_HOME="$(/usr/libexec/java_home)" 
+
+alias minimac='minikube start --memory 6000 --kubernetes-version v1.11.2'
+alias bup='brew update; brew upgrade; brew cleanup'
 

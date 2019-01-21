@@ -19,3 +19,6 @@ ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 # Package managers & packages
 
 cd $HOME
+
+
+git clone https://github.com/robbyrussell/oh-my-zsh.git 
