@@ -109,9 +109,22 @@ alias gc='gcloud alpha cloud-shell ssh'
 # Mac stuff
 export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
+export PATH="$PATH:~/packages/istio-1.0.5/bin"
 
-export JAVA_HOME="$(/usr/libexec/java_home)" 
-
-alias minimac='minikube start --memory 6000 --kubernetes-version v1.11.2'
+alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
+alias minimac='mcleanup; minikube start --memory 8192'
 alias bup='brew update; brew upgrade; brew cleanup'
+
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Java tricks.
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+
+#default to Java 11
+java11
 
