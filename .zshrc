@@ -112,8 +112,11 @@ export PATH=$PATH:~/packages/google-cloud-sdk/bin
 export PATH="$PATH:~/packages/istio-1.0.5/bin"
 
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='mcleanup; minikube start --memory 8192'
+alias minimac='mcleanup; minikube start --memory 4096'
 alias bup='brew update; brew upgrade; brew cleanup'
+alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
+alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
+
 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
