@@ -3,7 +3,7 @@
 export GOPATH=~/go
 
 
-export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$HOME/.pub-cache/bin:/usr/lib/dart/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$HOME/.pub-cache/bin:/usr/lib/dart/bin:~/packages/flutter/bin:$PATH
 
 
 # Path to your oh-my-zsh installation.
@@ -112,7 +112,7 @@ export PATH=$PATH:~/packages/google-cloud-sdk/bin
 export PATH="$PATH:~/packages/istio-1.0.5/bin"
 
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='mcleanup; minikube start --memory 4096'
+alias minimac='mcleanup; minikube start --memory 6000'
 alias bup='brew update; brew upgrade; brew cleanup'
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
@@ -134,3 +134,5 @@ java11
 
 unsetopt SHARE_HISTORY
 
+
+alias minifix='minikube ssh "sudo ip link set docker0 promisc on"'
