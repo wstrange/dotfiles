@@ -103,16 +103,14 @@ source $ZSH/oh-my-zsh.sh
 
 alias k=kubectl
 alias de='eval $(minikube docker-env)'
-alias gc='gcloud alpha cloud-shell ssh'
+alias gshell='gcloud alpha cloud-shell ssh'
 
 
 # Mac stuff
 export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
-export PATH="$PATH:~/packages/istio-1.0.5/bin"
-
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='mcleanup; minikube start --memory 6000'
+alias minimac='mcleanup; minikube start --memory 6000 --cpus=3'
 alias bup='brew update; brew upgrade; brew cleanup'
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
@@ -122,17 +120,33 @@ alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Java tricks.
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+alias java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
+alias java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias java13='export JAVA_HOME=$JAVA_11_HOME'
 
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-
-#default to Java 11
-java11
+java13
 
 
 unsetopt SHARE_HISTORY
 
 
 alias minifix='minikube ssh "sudo ip link set docker0 promisc on"'
+
+# Default values. Override these using eval $(minikube docker-env)
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://192.168.99.100:2376"
+#export DOCKER_CERT_PATH="/Users/warren.strange/.minikube/certs"
+
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+
+# Flutter / pub shortcuts
+alias fwatch='flutter pub run build_runner watch'
+alias fbuild='flutter pub run build_runner build'

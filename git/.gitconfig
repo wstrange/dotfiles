@@ -2,9 +2,9 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Warren Strange
-	email = warren.strange@gmail.com
+	email = warren.strange@forgerock.com
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/warren.strange/.gitignore
 	quotepath = false
 	autocrlf = input
 	filemode = false
@@ -27,3 +27,4 @@
 	conflictstyle = diff3
 
 [commit]
+	template = /Users/warren.strange/.stCommitMsg
