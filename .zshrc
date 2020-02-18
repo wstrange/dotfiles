@@ -110,7 +110,7 @@ alias gshell='gcloud alpha cloud-shell ssh'
 export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='mcleanup; minikube start --memory 6000 --cpus=3'
+alias minimac='minikube start --memory 6000 --cpus=3 disk-size=30000mb'
 alias bup='brew update; brew upgrade; brew cleanup'
 alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
@@ -147,6 +147,11 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 
+alias undocker='unset DOCKER_HOST; unset DOCKER_TLS_VERIFY; unset DOCKER_CERT_PATH'
 # Flutter / pub shortcuts
 alias fwatch='flutter pub run build_runner watch'
 alias fbuild='flutter pub run build_runner build'
+
+export EDITOR=code
+
+source /Users/warren.strange/Library/Preferences/org.dystroy.broot/launcher/bash/br
