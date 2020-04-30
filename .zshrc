@@ -110,21 +110,14 @@ alias gshell='gcloud alpha cloud-shell ssh'
 export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='minikube start --memory 6000 --cpus=3 disk-size=30000mb'
+alias minimac='minikube start --memory 7000 --cpus=3 disk-size=30000mb'
 alias bup='brew update; brew upgrade; brew cleanup'
-alias busybox='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
+alias kdebug='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
 
 
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-# Java tricks.
-alias java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11)'
-alias java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-alias java13='export JAVA_HOME=$JAVA_11_HOME'
-
-java13
 
 
 unsetopt SHARE_HISTORY
@@ -155,3 +148,9 @@ alias fbuild='flutter pub run build_runner build'
 export EDITOR=code
 
 source /Users/warren.strange/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+# Hacking on pulumi
+export PULUMI_CONFIG_PASSPHRASE=password
+export GOOGLE_PROJECT=engineering-devops
+
+
