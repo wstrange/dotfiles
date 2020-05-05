@@ -17,6 +17,10 @@ sudo snap install docker
 brew install skaffold kustomize
 brew install derailed/k9s/k9s
 
+brew tap GoogleContainerTools/kpt https://github.com/GoogleContainerTools/kpt.git
+brew install kpt
+
+
 
 # Krew
 # https://krew.sigs.k8s.io/docs/user-guide/setup/install/
@@ -39,6 +43,7 @@ alias k=kubectl
 export PATH="${PATH}:${HOME}/.krew/bin"
 export PATH="${PATH}:/snap/bin"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+export EDITOR=vi
 EOF
 
 git config --global user.email "warren.strange@forgerock.com"
