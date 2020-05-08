@@ -44,6 +44,8 @@ export PATH="${PATH}:${HOME}/.krew/bin"
 export PATH="${PATH}:/snap/bin"
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 export EDITOR=vi
+unsetopt share_history
+
 EOF
 
 git config --global user.email "warren.strange@forgerock.com"
@@ -59,3 +61,8 @@ curl https://sdk.cloud.google.com | bash
 # I had to use a service account for docker push
 # This sets the permissons on the bucket
 gsutil iam ch serviceAccount:docker-build@forgeops-public.iam.gserviceaccount.com:objectAdmin gs://artifacts.forgeops-public.appspot.com/
+
+
+# setup kubectl
+kubectl completion zsh > "${fpath[1]}/_kubectl"
+
