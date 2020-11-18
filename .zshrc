@@ -110,7 +110,7 @@ alias gshell='gcloud alpha cloud-shell ssh'
 export PATH=$PATH:~/packages/google-cloud-sdk/bin
 
 alias mcleanup='rm ~/Library/VirtualBox/HostInterfaceNetworking-vboxnet0-Dhcpd.leases'
-alias minimac='minikube start --memory 7000 --cpus=3 disk-size=30000mb'
+alias minimac='minikube start --memory 4096 --cpus=2 disk-size=30000mb'
 alias bup='brew update; brew upgrade; brew cleanup'
 alias kdebug='kubectl run -i --tty busybox --image=busybox --restart=Never -- sh'
 alias kbash='kubectl run -i --tty debian --image=debian:sid-slim --restart=Never -- bash'
@@ -145,12 +145,17 @@ alias undocker='unset DOCKER_HOST; unset DOCKER_TLS_VERIFY; unset DOCKER_CERT_PA
 alias fwatch='flutter pub run build_runner watch'
 alias fbuild='flutter pub run build_runner build'
 
-export EDITOR=code
+#export EDITOR=code
+export EDITOR=vim
 
 source /Users/warren.strange/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
 # Hacking on pulumi
 export PULUMI_CONFIG_PASSPHRASE=password
 export GOOGLE_PROJECT=engineering-devops
+
+# Run the fr debug pod
+alias fdebug='kubectl run -it dsutil --image=gcr.io/forgeops-public/ds-util --restart=Never -- bash'
+
 
 
